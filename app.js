@@ -9,20 +9,38 @@ const resetBtn = document.querySelector('#resetBtn');
 let count1 = 0;
 let count2 = 0;
 
+
+// while (count1 || count2 !== parseInt(val)){
+
+// }
+
 p1btn.onclick = ()=> {
-    if (count1 < val){        
+    if (count1 < parseInt(val)){        
         count1++;
         p1score.textContent = count1;
-    } else {
-        count1 === val;
+    } 
+    if (count1 === parseInt(val)) {
+        p1btn.disabled = true;
+        p2btn.disabled = true;
+
     }
 }
 p2btn.onclick = ()=> {
-    if (count2 < val){        
+    if (count2 < parseInt(val)){        
         count2++;
         p2score.textContent = count2;
-    } else {
-        count2 === val;
+    } 
+    if (count2 === parseInt(val)) {
+        p1btn.disabled = true;
+        p2btn.disabled = true;
+
     }
 }
-
+resetBtn.onclick = ()=> {
+    count1 = 0;
+    count2 = 0;
+    p1score.textContent = 0;
+    p2score.textContent = 0;
+    p1btn.disabled = false;
+    p2btn.disabled = false;
+}
